@@ -1,4 +1,8 @@
 ﻿using BenchmarkDotNet.Running;
 using cas_dotnet_benchmarks;
+using cas_dotnet_benchmarks.PasswordHashers;
 
-var summary = BenchmarkRunner.Run<PasswordHasherBenchmarks>();
+BenchmarkRunner.Run(new[]{
+            BenchmarkConverter.TypeToBenchmarks( typeof(PasswordHasherBenchmarks)),
+            BenchmarkConverter.TypeToBenchmarks( typeof(BCryptBenchmark))
+            });

@@ -36,18 +36,6 @@ namespace cas_dotnet_benchmarks
         }
 
         [Benchmark]
-        public string BCryptHash()
-        {
-            return this._bcrypt.HashPassword(this._password);
-        }
-
-        [Benchmark]
-        public bool BCryptVerify()
-        {
-            return this._bcrypt.Verify(this._bcryptHash, this._password);
-        }
-
-        [Benchmark]
         public string SCryptHash()
         {
             return this._bcrypt.HashPassword(this._password);
