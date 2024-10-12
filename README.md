@@ -25,7 +25,7 @@ We aim to provide cross-compatibility wherever possible. Test cases are run on .
 - [X] .NET 7
 - [X] .NET 8
 - [X] Windows
-- [] Linux  
+- [X] Linux  
 
 ## Disclaimer
 Many of the cryptographic crates that are utilized in our core FFI [layer](https://github.com/Crytographic-API-Services/cas-core-lib) have never had a security audit performed. Utilize this SDK at your own risk.

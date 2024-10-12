@@ -6,7 +6,7 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>cas-dotnet-sdk</Title>
 		<PackageIcon>icon.jpeg</PackageIcon>
-		<Version>1.1.63</Version>
+		<Version>1.1.64</Version>
 		<Authors>Mike Mulchrone</Authors>
 		<Description>A Nuget package that provides a implementation of the RustCrypto suite of cryptographic algorithms.</Description>
 		<RepositoryUrl>https://github.com/Cryptographic-API-Services/cas-dotnet-sdk</RepositoryUrl>

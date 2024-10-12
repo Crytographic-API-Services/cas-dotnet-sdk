@@ -98,9 +98,9 @@ namespace CasDotnetSdk.PasswordHashers
         /// <param name="hash"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public bool Verify(string password, string hash)
+        public bool Verify(string hashedPassword, string password)
         {
-            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(hash))
+            if (string.IsNullOrEmpty(password) || string.IsNullOrEmpty(hashedPassword))
             {
                 throw new Exception("Please provide a password and a hash to verify");
             }
@@ -108,7 +108,7 @@ namespace CasDotnetSdk.PasswordHashers
             DateTime start = DateTime.UtcNow;
             if (this._platform == OSPlatform.Linux)
             {
-                bool result = SCryptLinuxWrapper.scrypt_verify(password, hash);
+                bool result = SCryptLinuxWrapper.scrypt_verify(hashedPassword, password);
                 DateTime end = DateTime.UtcNow;
                 this._sender.SendNewBenchmarkMethod(MethodBase.GetCurrentMethod().Name, start, end, BenchmarkMethodType.Hash, nameof(SCryptWrapper));
                 return result;
@@ -116,7 +116,7 @@ namespace CasDotnetSdk.PasswordHashers
             else
             {
 
-                bool result = SCryptWindowsWrapper.scrypt_verify(password, hash);
+                bool result = SCryptWindowsWrapper.scrypt_verify(hashedPassword, password);
                 DateTime end = DateTime.UtcNow;
                 this._sender.SendNewBenchmarkMethod(MethodBase.GetCurrentMethod().Name, start, end, BenchmarkMethodType.Hash, nameof(SCryptWrapper));
                 return result;

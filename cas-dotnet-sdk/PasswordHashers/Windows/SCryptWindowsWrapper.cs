@@ -13,7 +13,7 @@ namespace CasDotnetSdk.PasswordHashers.Windows
 
         [DllImport("\\Contents\\cas_core_lib.dll")]
         [return: MarshalAs(UnmanagedType.I1)]
-        public static extern bool scrypt_verify(string password, string hash);
+        public static extern bool scrypt_verify(string hashedPassword, string password);
 
         [DllImport("\\Contents\\cas_core_lib.dll")]
         [return: MarshalAs(UnmanagedType.I1)]
